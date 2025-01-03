@@ -8,18 +8,11 @@
         <version>3.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <packaging>pom</packaging>
     <groupId>org.edu</groupId>
-    <artifactId>tiktokMail</artifactId>
+    <artifactId>product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tiktokMail</name>
-    <description>tiktokMail</description>
-    <modules>
-        <module>gateway</module>
-        <module>user</module>
-        <module>common</module>
-        <module>product</module>
-    </modules>
+    <name>product</name>
+    <description>product</description>
     <url/>
     <licenses>
         <license/>

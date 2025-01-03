@@ -18,6 +18,7 @@ public class UserController {
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public Result getList(){
         // 远程调用
+        userService.saveUser(new User("1","zhangsan","123456",18));
         List<User> userList = userService.getUserList();
         return new Result.Builder<>().code(200).msg("success").data(userList).build();
     }
