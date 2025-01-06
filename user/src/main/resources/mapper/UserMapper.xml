@@ -1,0 +1,6 @@
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper">
+
+    <insert id="insertUser" parameterType="com.example.user.domain.User">
+        INSERT INTO user (id, name, age) VALUES (#{id}, #{name}, #{age})
+    </insert>
+</mapper>

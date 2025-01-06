@@ -9,10 +9,10 @@
     </parent>
 
     <groupId>org.edu</groupId>
-    <artifactId>user</artifactId>
+    <artifactId>userDTO</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user</name>
-    <description>user</description>
+    <name>userDTO</name>
+    <description>userDTO</description>
     <url/>
     <licenses>
         <license/>
@@ -85,6 +85,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.31</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
     </dependencies>
 
