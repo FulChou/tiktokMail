@@ -9,10 +9,10 @@
     </parent>
 
     <groupId>org.edu</groupId>
-    <artifactId>userDTO</artifactId>
+    <artifactId>user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>userDTO</name>
-    <description>userDTO</description>
+    <name>user</name>
+    <description>user</description>
     <url/>
     <licenses>
         <license/>
@@ -31,16 +31,26 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>5.7.6</version> <!-- 使用最新稳定版本 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <version>3.4.1</version>
         </dependency>
-
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>3.2.0</version>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>3.0.3</version>
         </dependency>
+
         <!-- Dubbo依赖 -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -52,13 +62,13 @@
             <artifactId>dubbo</artifactId>
             <version>3.2.0</version>
         </dependency>
+
         <!-- Nacos依赖 -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>3.2.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
@@ -89,6 +99,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
