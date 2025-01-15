@@ -1,26 +1,21 @@
 package org.edu.user.infra.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
+import java.util.Date;
 
-@TableName("user")
+@Data
+@TableName("users")
 public class UserEntity {
-    @TableId
+    @TableId(type = IdType.AUTO)
     private String id;
-
     private String username;
-
+    private String password;
+    private String email;
+    private Date created_at;
 }
-
-
-//pojo: 数据库
-//entity: 实体
-//userdomain: 用户领域
-//userRepository: 用户仓库
-//dto : 传输
-//vo : 视图
-//
-//model: 业务数据
 
