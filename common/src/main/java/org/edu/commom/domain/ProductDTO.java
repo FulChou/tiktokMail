@@ -7,6 +7,7 @@ public class ProductDTO {
     private String price;
     private String category;
     private String image;
+    private Integer stock;
 
     public ProductDTO(String id, String name, String description, String price) {
         this.id = id;
