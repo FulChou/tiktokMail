@@ -2,13 +2,18 @@ package org.edu.commom.domain.request;
 
 import lombok.Data;
 
-@Data
-public class ProductParam extends baseReq {
+import java.math.BigDecimal;
+import java.io.Serializable;
 
-    private String id;
+@Data
+public class ProductParam extends baseReq implements Serializable{
+
+    private Long id;
     private String name;
     private String description;
-    private String price;
-    private String category;
+    private BigDecimal price;
+    private Integer category;
     private String image;
+    private Integer page;
+    private Integer size;
 }

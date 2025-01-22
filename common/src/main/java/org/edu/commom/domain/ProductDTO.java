@@ -1,18 +1,20 @@
 package org.edu.commom.domain;
 
-public class ProductDTO {
-    private String id;
-    private String name;
-    private String description;
-    private String price;
-    private String category;
-    private String image;
-    private Integer stock;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    public ProductDTO(String id, String name, String description, String price) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-    }
+import java.math.BigDecimal;
+import java.io.Serializable;
+
+@Data
+@NoArgsConstructor
+public class ProductDTO implements Serializable{
+    private Long productId;
+    private String productName;
+    private String description;
+    private BigDecimal price;
+    private Integer categoryId;
+    private String image;
+    private Integer stockQuantity;
+
 }
