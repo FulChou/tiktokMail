@@ -20,7 +20,6 @@ public class UserServiceImp extends ServiceImpl<UserMapper, UserEntity> implemen
 
     @Override
     public int saveUser(UserDTO user) {
-
         UserEntity userEntity = new UserEntity();
         userEntity.setUsername(user.getUsername());
         // password should be encrypted:
