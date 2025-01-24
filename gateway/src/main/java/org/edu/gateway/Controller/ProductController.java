@@ -62,15 +62,15 @@ public class ProductController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Integer category,
             @RequestParam(required = false) BigDecimal price,
-            @RequestParam(defaultValue = "1") Integer page,
-            @RequestParam(defaultValue = "10") Integer size) {
+            @RequestParam(defaultValue = "1") Integer pageNum,
+            @RequestParam(defaultValue = "10") Integer pageSize) {
         try {
             ProductParam param = new ProductParam();
             param.setName(name);
             param.setCategory(category);
             param.setPrice(price);
-            param.setPage(page);
-            param.setSize(size);
+            param.setPageNum(pageNum);
+            param.setPageSize(pageSize);
 
             List<ProductDTO> products = productService.getProductList(param);
             return new Result.Builder().msg("查询商品成功").code(200).data(products).build();
