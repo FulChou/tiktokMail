@@ -14,6 +14,4 @@ public class ProductParam extends baseReq implements Serializable{
     private BigDecimal price;
     private Integer category;
     private String image;
-    private Integer page;
-    private Integer size;
 }

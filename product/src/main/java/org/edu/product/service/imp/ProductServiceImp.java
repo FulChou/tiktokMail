@@ -18,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.edu.commom.Constant.Constants.INVALID;
+import static org.edu.commom.Constant.Constants.VALID;
+
 @Service(interfaceClass = ProductServiceRPC.class)
 public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity> implements ProductServiceRPC {
 
@@ -37,7 +40,7 @@ public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity>
         productEntity.setPrice(product.getPrice());
         productEntity.setCategoryId(product.getCategoryId());
         productEntity.setImage(product.getImage());
-        productEntity.setStatus(1);
+        productEntity.setStatus(VALID);
 
         //插入 ProductEntity 到数据库
         productMapper.insert(productEntity); // 插入商品记录
@@ -76,7 +79,7 @@ public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity>
         productEntity.setPrice(product.getPrice());
         productEntity.setCategoryId(product.getCategoryId());
         productEntity.setImage(product.getImage());
-        productEntity.setStatus(1);
+        productEntity.setStatus(VALID);
 
         // 更新商品信息
         productMapper.updateById(productEntity);
@@ -103,7 +106,7 @@ public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity>
         //软删除商品，将商品的状态设置为删除状态，不再展示给用户，但是不会从数据库中删除
         ProductEntity productEntity = new ProductEntity();
         productEntity.setProductId(product.getProductId());
-        productEntity.setStatus(0);
+        productEntity.setStatus(INVALID);
         productMapper.updateById(productEntity);
     }
 
@@ -111,7 +114,7 @@ public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity>
     public List<ProductDTO> getProductList(ProductParam param) {
         //可以根据商品的名称，类别，价格等信息查询商品列表，可以分页查询，每页展示10条数据，可以做模糊查询（名字）
         // 设置分页信息，默认每页10条
-        int pageNum = param.getPage();
+        int pageNum = param.getPageNum();
         int pageSize = param.getPageSize();
         Page<ProductEntity> page = new Page<>(pageNum, pageSize);
 
