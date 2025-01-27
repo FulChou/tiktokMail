@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.dubbo.config.annotation.Service;
-import org.edu.commom.Service.ProductServiceRPC;
-import org.edu.commom.domain.ProductDTO;
-import org.edu.commom.domain.request.ProductParam;
+import org.edu.common.service.ProductServiceRPC;
+import org.edu.common.domain.ProductDTO;
+import org.edu.common.domain.request.ProductParam;
 import org.edu.product.infra.dao.InventoryMapper;
 import org.edu.product.infra.dao.ProductMapper;
 import org.edu.product.infra.entity.InventoryEntity;
@@ -18,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.edu.commom.Constant.Constants.INVALID;
-import static org.edu.commom.Constant.Constants.VALID;
+import static org.edu.common.constant.Constants.INVALID;
+import static org.edu.common.constant.Constants.VALID;
 
 @Service(interfaceClass = ProductServiceRPC.class)
 public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity> implements ProductServiceRPC {

@@ -2,8 +2,8 @@ package org.edu.user.service.imp;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.dubbo.config.annotation.Service;
-import org.edu.commom.Service.UserServiceRPC;
-import org.edu.commom.domain.UserDTO;
+import org.edu.common.service.UserServiceRPC;
+import org.edu.common.domain.UserDTO;
 import org.edu.user.infra.dao.UserMapper;
 import org.edu.user.infra.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;

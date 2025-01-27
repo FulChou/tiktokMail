@@ -1,7 +1,7 @@
-package org.edu.commom.Service;
+package org.edu.common.service;
 
-import org.edu.commom.domain.ProductDTO;
-import org.edu.commom.domain.request.ProductParam;
+import org.edu.common.domain.ProductDTO;
+import org.edu.common.domain.request.ProductParam;
 
 import java.util.List;
 

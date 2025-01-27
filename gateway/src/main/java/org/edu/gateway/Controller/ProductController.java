@@ -3,10 +3,10 @@ package org.edu.gateway.Controller;
 import org.apache.dubbo.common.logger.Logger;
 import org.apache.dubbo.common.logger.LoggerFactory;
 import org.apache.dubbo.config.annotation.Reference;
-import org.edu.commom.Service.ProductServiceRPC;
-import org.edu.commom.domain.ProductDTO;
-import org.edu.commom.domain.Result;
-import org.edu.commom.domain.request.ProductParam;
+import org.edu.common.service.ProductServiceRPC;
+import org.edu.common.domain.ProductDTO;
+import org.edu.common.domain.response.Result;
+import org.edu.common.domain.request.ProductParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;

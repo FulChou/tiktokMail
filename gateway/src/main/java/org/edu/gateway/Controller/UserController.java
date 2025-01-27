@@ -1,9 +1,9 @@
 package org.edu.gateway.Controller;
 
 import org.apache.dubbo.config.annotation.Reference;
-import org.edu.commom.Service.UserServiceRPC;
-import org.edu.commom.domain.Result;
-import org.edu.commom.domain.UserDTO;
+import org.edu.common.service.UserServiceRPC;
+import org.edu.common.domain.response.Result;
+import org.edu.common.domain.UserDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

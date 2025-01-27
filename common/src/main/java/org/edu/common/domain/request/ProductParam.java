@@ -1,4 +1,4 @@
-package org.edu.commom.domain.request;
+package org.edu.common.domain.request;
 
 import lombok.Data;
 
