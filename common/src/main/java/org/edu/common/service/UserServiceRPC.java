@@ -1,6 +1,6 @@
-package org.edu.commom.Service;
+package org.edu.common.service;
 
-import org.edu.commom.domain.UserDTO;
+import org.edu.common.domain.UserDTO;
 
 import java.util.List;
 

@@ -20,6 +20,8 @@
         <module>common</module>
         <module>product</module>
         <module>auth</module>
+        <module>order</module>
+        <module>cart</module>
     </modules>
     <url/>
     <licenses>

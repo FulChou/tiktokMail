@@ -1,4 +1,4 @@
-package org.edu.commom.domain;
+package org.edu.common.domain.response;
 
 import lombok.Getter;
 

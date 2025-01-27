@@ -1,4 +1,4 @@
-package org.edu.commom.domain;
+package org.edu.common.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +15,5 @@ public class ProductDTO implements Serializable{
     private BigDecimal price;
     private Integer categoryId;
     private String image;
-    private Integer stockQuantity;
-
+    private Integer stockQuantity; // 商品数量
 }

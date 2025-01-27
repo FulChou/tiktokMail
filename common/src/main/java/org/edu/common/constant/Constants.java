@@ -1,4 +1,4 @@
-package org.edu.commom.Constant;
+package org.edu.common.constant;
 
 public class Constants {
     public static final Integer VALID = 1;
