@@ -13,6 +13,9 @@ https://taumr7bfxy1.feishu.cn/docx/K7TJdWPNcowttzxL09ccbVSzntg
 
 ### 项目架构图：
 
+
 ### TODO:
-- 购物车模块
-- 订单模块
+- 绘制项目架构图
+- 认证中心auth实现
+- 数据表设置合理索引
+- 用户权限问题
