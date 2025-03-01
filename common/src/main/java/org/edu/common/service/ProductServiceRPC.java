@@ -1,11 +1,16 @@
 package org.edu.common.service;
 
+import org.edu.common.domain.DatoDTO.InventoryDataDTO;
 import org.edu.common.domain.ProductDTO;
 import org.edu.common.domain.request.ProductParam;
 
 import java.util.List;
 
 public interface ProductServiceRPC {
+
+    InventoryDataDTO getInventoryByProductId(Long productId);
+
+    void updateInventory(InventoryDataDTO inventoryDataDTO);
 
     /**
      * @param product 保存商品

@@ -12,10 +12,12 @@ import java.util.Date;
 @TableName("users")
 public class UserEntity {
     @TableId(type = IdType.AUTO)
-    private String id;
+    private Long id;
     private String username;
     private String password;
     private String email;
+    private String phone;
+    private String address;
     private Date created_at;
 }
 

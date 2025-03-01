@@ -14,6 +14,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    // user->role->permission
+    // userid 1n roleid
+    // roleid 1n permissionid
 
     @Reference
     private UserServiceRPC userService;

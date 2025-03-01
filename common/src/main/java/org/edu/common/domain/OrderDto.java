@@ -3,15 +3,16 @@ package org.edu.common.domain;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 @Data
-public class OrderDto {
+public class OrderDto implements Serializable {
     private Long orderId; // 订单id (给系统用)
     private String orderNumber; // 订单编号（给用户看）
-    private String Status; // 定义订单状态，比如：0未支付，1已支付，2已发货，3已完成等
+    private Integer Status; // 定义订单状态，比如：0未支付，1已支付，2已发货，3已完成等
     private Date createTime; // 订单创建时间
     private Date updateTime; // 订单更新时间
     private Long userId; // 用户id (用户表的主键，可获得用户名，电话等信息)

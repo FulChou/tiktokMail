@@ -1,7 +1,7 @@
 package org.edu.user.service.imp;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.dubbo.config.annotation.Service;
+import org.edu.common.domain.DatoDTO.UserDataDTO;
 import org.edu.common.service.UserServiceRPC;
 import org.edu.common.domain.UserDTO;
 import org.edu.user.infra.dao.UserMapper;
@@ -13,10 +13,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service(interfaceClass = UserServiceRPC.class)
-public class UserServiceImp extends ServiceImpl<UserMapper, UserEntity> implements UserServiceRPC {
+public class UserServiceImp  implements UserServiceRPC {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private UserServiceImpInner userServiceImpInner;
+
+    public UserDataDTO getById(Long id) {
+        // 调用 service 层的方法获取 UserEntity
+        UserEntity userEntity = userServiceImpInner.getById(id);
+
+        // 将 UserEntity 转换为 UserDataDTO
+        UserDataDTO userDataDTO = new UserDataDTO();
+        userDataDTO.setId(userEntity.getId());
+        userDataDTO.setUsername(userEntity.getUsername());
+        userDataDTO.setEmail(userEntity.getEmail());
+        userDataDTO.setPhone(userEntity.getPhone());
+        userDataDTO.setAddress(userEntity.getAddress());
+        userDataDTO.setPassword(userEntity.getPassword());
+        userDataDTO.setCreated_at(userEntity.getCreated_at());
+
+        return userDataDTO;
+    }
+
+    public void updateById(UserDataDTO userDataDTO) {
+        // 转换成UserEntity后更新：
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUsername(userDataDTO.getUsername());
+        userEntity.setPassword(userDataDTO.getPassword());
+        userEntity.setEmail(userDataDTO.getEmail());
+        userEntity.setPhone(userDataDTO.getPhone());
+        userEntity.setAddress(userDataDTO.getAddress());
+
+        userMapper.updateById(userEntity);
+    }
+
 
     @Override
     public int saveUser(UserDTO user) {
