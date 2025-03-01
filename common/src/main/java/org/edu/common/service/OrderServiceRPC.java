@@ -1,6 +1,11 @@
 package org.edu.common.service;
 
+import org.edu.common.domain.DatoDTO.OrderDataDTO;
+import org.edu.common.domain.DatoDTO.OrderDetailDataDTO;
 import org.edu.common.domain.OrderDto;
+
+import java.util.List;
+
 
 public interface OrderServiceRPC {
 
@@ -17,7 +22,7 @@ public interface OrderServiceRPC {
      * @param param
      * @apiNote 更新订单状态，可以更新订单内商品信息（买什么，买几个），用户信息（地址等），以及订单是否支付，是否完成的状态
      */
-    void updateOrder(OrderDto param);
+    int updateOrder(OrderDto param);
 
     /**
      * @param param
@@ -40,5 +45,17 @@ public interface OrderServiceRPC {
      */
     void verify(OrderDto param);
 
+    OrderDataDTO getById(Long orderId);
 
+    List<OrderDetailDataDTO> getOrderDetailsByOrderId(Long orderId);
+
+    /**
+     * 更新订单的对应的支付单ID
+     * @param orderId
+     * @param paymentTransactionId
+     * @return
+     */
+    boolean updatePaymentTransactionId(Long orderId, Long paymentTransactionId);
+
+    boolean updateStatus(Long orderId, Integer status);
 }

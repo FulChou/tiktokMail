@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.dubbo.config.annotation.Service;
+import org.edu.common.domain.DatoDTO.InventoryDataDTO;
 import org.edu.common.service.ProductServiceRPC;
 import org.edu.common.domain.ProductDTO;
 import org.edu.common.domain.request.ProductParam;
@@ -29,6 +30,41 @@ public class ProductServiceImp extends ServiceImpl<ProductMapper, ProductEntity>
 
     @Autowired
     private InventoryMapper inventoryMapper;
+
+    @Autowired
+    private InventoryService inventoryService;
+
+    @Override
+    public InventoryDataDTO getInventoryByProductId(Long productId) {
+        QueryWrapper<InventoryEntity> inventoryEntityQueryWrapper =  new QueryWrapper<>();
+        inventoryEntityQueryWrapper.eq("product_id", productId);
+        InventoryEntity inventoryEntity =  inventoryMapper.selectOne(inventoryEntityQueryWrapper);
+
+        InventoryDataDTO inventoryDataDTO = new InventoryDataDTO();
+        inventoryDataDTO.setInventoryId(inventoryEntity.getInventoryId());
+        inventoryDataDTO.setProductId(inventoryEntity.getProductId());
+        inventoryDataDTO.setLowStockThreshold(inventoryEntity.getLowStockThreshold());
+        inventoryDataDTO.setStockQuantity(inventoryEntity.getStockQuantity());
+        inventoryDataDTO.setCreatedAt(inventoryEntity.getCreatedAt());
+        inventoryDataDTO.setUpdatedAt(inventoryEntity.getUpdatedAt());
+
+        return inventoryDataDTO;
+    }
+
+    @Override
+    public void updateInventory(InventoryDataDTO inventoryDataDTO) {
+        //更新库存信息
+        InventoryEntity inventoryEntity = new InventoryEntity();
+
+        inventoryEntity.setInventoryId(inventoryDataDTO.getInventoryId());
+        inventoryEntity.setStockQuantity(inventoryDataDTO.getStockQuantity());
+        inventoryEntity.setLowStockThreshold(inventoryDataDTO.getLowStockThreshold());
+        inventoryEntity.setLockedQuantity(inventoryDataDTO.getLockedQuantity());
+        inventoryEntity.setUpdatedAt(inventoryDataDTO.getUpdatedAt());
+        inventoryEntity.setProductId(inventoryDataDTO.getProductId());
+
+        inventoryMapper.updateById(inventoryEntity);
+    }
 
     @Transactional
     @Override
